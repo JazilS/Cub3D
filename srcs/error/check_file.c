@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:57:49 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 14:25:13 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:30:52 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_nb_arg(int ac)
 	if (ac > 2)
 		return (1);
 	else if (ac < 2)
-		return (1);
+		return (2);
 	return (0);
 }
 

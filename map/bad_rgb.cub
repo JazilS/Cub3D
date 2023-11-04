@@ -1,10 +1,10 @@
 SO ./textures/purplestone.xpm
-NO ./textures/yumyum.xpm
+NO ./textures/red.xpm
 WE ./textures/greystone.xpm
 EA ./textures/eagle.xpm
 
 C 6,5,5
-F 59,5,900
+F 59,5, sdf
 
 1111111111111111111111
 1000000000000000000001

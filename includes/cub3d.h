@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:15:59 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 14:58:47 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:30:14 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,8 @@ int					check_ea(t_data *data);
 int					check_virg(char *f, t_data *data);
 int					check_f(t_data *data);
 int					check_c(t_data *data);
+char				**check_alpha_rgb_c(t_data *data);
+char				**check_alpha_rgb_f(t_data *data);
 int					check_borders(char **map, t_data *data);
 int					check_borders_suite(char **map, t_data *data);
 int					check_borders_suite2(char **map, t_data *data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:25:22 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 14:24:54 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:36:54 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void	check(char *file, int ac, t_data *data)
 	if (check_nb_arg(ac))
 	{
 		little_free(data);
-		quit_error_no_free(TOO_MUCH_ARG_ERROR);
+		if (check_nb_arg(ac) == 1)
+			quit_error_no_free(TOO_MUCH_ARG_ERROR);
+		if (check_nb_arg(ac) == 2)
+			quit_error_no_free(TOO_FEW_ARG_ERROR);
 	}
 	if (check_file_name(file))
 	{
