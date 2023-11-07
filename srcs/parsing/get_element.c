@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_element.c                                    :+:      :+:    :+:   */
+/*   get_element.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 20:16:19 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 14:50:01 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/07 22:07:50 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ int	get_element(char **file, t_data *data)
 
 void	get_element3(int *flag, char **file, int *i, t_data *data)
 {
-	if (!ft_strncmp(file[*i], "NO", 2))
+	if (!ft_strncmp(file[*i], "NO", 2) && !data->no)
 	{
 		data->no = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (!ft_strncmp(file[*i], "WE", 2))
+	else if (!ft_strncmp(file[*i], "WE", 2) && !data->we)
 	{
 		data->we = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
@@ -63,22 +63,22 @@ void	get_element3(int *flag, char **file, int *i, t_data *data)
 
 int	get_element2(int *flag, char **file, int *i, t_data *data)
 {
-	if (!ft_strncmp(file[*i], "SO", 2))
+	if (!ft_strncmp(file[*i], "SO", 2) && !data->so)
 	{
 		data->so = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (!ft_strncmp(file[*i], "EA", 2))
+	else if (!ft_strncmp(file[*i], "EA", 2) && !data->ea)
 	{
 		data->ea = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (!ft_strncmp(file[*i], "F", 1))
+	else if (!ft_strncmp(file[*i], "F", 1) && !data->f)
 	{
 		data->f = ft_substr(file[*i], 2, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (!ft_strncmp(file[*i], "C", 1))
+	else if (!ft_strncmp(file[*i], "C", 1) && !data->c)
 	{
 		data->c = ft_substr(file[*i], 2, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;

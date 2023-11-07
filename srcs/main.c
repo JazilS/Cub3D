@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:16:42 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 14:10:57 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/07 22:08:24 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	init_data(t_data *data)
 	if (!data->garb_coll)
 		return ;
 	*(data->garb_coll) = NULL;
+	data->ea = NULL;
+	data->no = NULL;
+	data->so = NULL;
+	data->we = NULL;
+	data->f = NULL;
+	data->c = NULL;
 }
 
 int	main(int ac, char **av)

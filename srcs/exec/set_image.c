@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_image.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:58:56 by jsabound          #+#    #+#             */
-/*   Updated: 2023/10/31 18:02:43 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/07 21:21:18 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	set_images(t_data *data)
 		quit_error_no_free("Failed to set images");
 	if (!set_main_img(data))
 		quit_error_no_free("Failed to create image");
-	if (!load_image(data, data->engine->textures[0], data->no,
+	if (!load_image(data, data->engine->textures[0], data->so,
 			&img))
 		quit_error_no_free("Failed to set images");
-	if (!load_image(data, data->engine->textures[1], data->so,
+	if (!load_image(data, data->engine->textures[1], data->no,
 			&img))
 		quit_error_no_free("Failed to set images");
 	if (!load_image(data, data->engine->textures[2], data->we,
