@@ -1,6 +1,7 @@
 SO ./textures/purplestone.xpm
 NO ./textures/red.xpm
 WE ./textures/greystone.xpm
+WE ./textures/greystone.xpm
 EA ./textures/eagle.xpm
 
 C 6,5,5

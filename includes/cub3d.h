@@ -6,7 +6,7 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:15:59 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/08 18:37:11 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:14:51 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,7 @@ char				*ft_strdup(const char *s, t_data *data);
 
 /*---------------------------------PARSING----------------------------------*/
 int					get_file(t_data *data);
+void				get_line(char *line, t_data *data, int *i);
 int					get_element(char **file, t_data *data);
 int					get_and_check_element(t_data *data);
 int					get_and_check_map(t_data *data);
