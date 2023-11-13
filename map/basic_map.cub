@@ -3,7 +3,7 @@ NO ./textures/red.xpm
 WE ./textures/greystone.xpm
 EA ./textures/eagle.xpm
 
-C 6,5,5
+C 6,5,8
 F 59,5,90
 
 1111111
