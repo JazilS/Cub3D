@@ -6,30 +6,11 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:42:26 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 08:08:05 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 04:02:51 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
-// static void	*ft_calloc(size_t count, size_t size)
-// {
-// 	char	*s;
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (size != 0 && count > SIZE_MAX / size)
-// 		return (NULL);
-// 	s = malloc(count * size);
-// 	if (!s)
-// 		return (NULL);
-// 	while (i < count * size)
-// 	{
-// 		s[i] = 0;
-// 		i++;
-// 	}
-// 	return (s);
-// }
 
 char	*ft_strjoin(char *s1, char *s2, t_data *list)
 {

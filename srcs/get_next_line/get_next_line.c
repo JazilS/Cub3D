@@ -6,7 +6,7 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 14:44:25 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 06:09:19 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 04:02:40 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,20 +105,3 @@ char	*get_next_line(int fd, t_data *list)
 	gnl = ft_delete(gnl, list);
 	return (res);
 }
-
-/*int main(void)
- {
- 	int fd;
- 	char	*str;
-
- 	fd = open("get_next_line.h", O_RDONLY);
- 	str = get_next_line(fd);
- 	while(str != NULL)
- 	{
- 		printf("%s", str);
- 		free(str);
- 		str = get_next_line(fd);
- 	}
- 	close(fd);
- }
-*/

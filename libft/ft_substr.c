@@ -6,22 +6,12 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:17:15 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 06:36:46 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 04:05:46 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../includes/cub3d.h"
-
-// static char	*ft_malloc(size_t new_len)
-// {
-// 	char	*str;
-
-// 	str = malloc(sizeof(char) * new_len);
-// 	if (!str)
-// 		return (NULL);
-// 	return (str);
-// }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len,
 		t_list **garb_coll)

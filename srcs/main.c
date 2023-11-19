@@ -6,7 +6,7 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:16:42 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/07 22:08:24 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 04:04:28 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,32 +40,3 @@ int	main(int ac, char **av)
 	exec(&data);
 	return (ft_destroy_mlx(&data), clear(data), 0);
 }
-
-// int i = 0;
-// while (data.file[i])
-// {
-// 	printf("%s\n", data.file[i]);
-// 	i++;
-// }
-// i = 0;
-// while (data.map[i])
-// {
-// 	printf("%s\n", data.map[i]);
-// 	i++;
-// }
-// printf("nb = %d\n", data.nb_column);
-// i = 0;
-// while (data.map_path[i])
-// {
-// 	printf("%s\n", data.map_path[i]);
-// 	i++;
-// }
-// printf("%c\n", data.map[i - 1][5]);
-// path_finding(data.map, &data);
-// get_and_check_element(&data);
-// printf("NO = %s\n", data.no);
-// printf("WE = %s\n", data.we);
-// printf("SO = %s\n", data.so);
-// printf("EA = %s\n", data.ea);
-// printf("F = %s\n", data.f);
-// printf("C = %s\n", data.c);
