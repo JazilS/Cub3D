@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:17:53 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/08 20:34:34 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 16:48:12 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,40 +52,24 @@ int	get_file(t_data *data)
 	char	*line;
 
 	i = 0;
-	line = ft_strdup("", data);
-	line = get_next_line(data->fd, data);
-	if (!line || line[0] == '\0')
+	while (1)
 	{
-		ft_putstr_fd("Error\nMap empty\n", 2);
-		ft_lstclear(data->garb_coll, free);
-		exit(1);
-	}
-	get_line(line, data, &i);
-	return (close(data->fd), 0);
-}
-
-void	get_line(char *line, t_data *data, int *i)
-{
-	while (line)
-	{
-		while (line && line[0] == '\n')
-			line = get_next_line(data->fd, data);
-		if (!line || line[0] == '\0')
-		{
-			ft_putstr_fd("Error\nMap not valid\n", 2);
-			ft_lstclear(data->garb_coll, free);
-			exit(1);
-		}
-		if (*i == 0 && (size_t)ft_count_space(line) == ft_strlen(line))
+		line = ft_strdup("", data);
+		line = get_next_line(data->fd, data);
+		if (!line)
+			break ;
+		if (i == 0 && (size_t)ft_count_space(line) == ft_strlen(line))
 			continue ;
-		if (*(line + ft_count_space(line)) == '\0' && *i == 0)
+		if (*(line + ft_count_space(line)) == '\0' && i == 0)
 			continue ;
-		data->file = realloc_map(data->file, sizeof(char *) * ((*i) + 1),
-				sizeof(char *) * ((*i) + 2), data);
+		data->file = realloc_map(data->file,
+				sizeof(char *) * (i + 1), sizeof(char *) * (i + 2), data);
 		if (line[ft_strlen(line) - 1] == '\n')
 			line[ft_strlen(line) - 1] = '\0';
-		data->file[(*i)++] = line;
-		data->file[*i] = NULL;
-		line = get_next_line(data->fd, data);
-	}	
+		data->file[i++] = line;
+		data->file[i] = NULL;
+	}
+	if (i == 0)
+		quit_error("Map not valid", data->garb_coll);
+	return (close(data->fd), 0);
 }
