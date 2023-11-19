@@ -6,7 +6,7 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:30:35 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 06:25:50 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:04:55 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	exec(t_data *data)
 	data->engine->mlx = mlx_init();
 	if (!data->engine->mlx)
 		quit_error(MLX_ERROR, data->garb_coll);
+	set_images(data);
 	data->engine->win = mlx_new_window(data->engine->mlx, WIDTH, HEIGHT,
 			"Cub3D");
 	if (!data->engine->win)
 		quit_error(MLX_ERROR, data->garb_coll);
-	set_images(data);
 	mlx_loop_hook(data->engine->mlx, &main_loop, &data);
 	mlx_hook(data->engine->win, 17, 0, mlx_loop_end, data->engine->mlx);
 	mlx_hook(data->engine->win, 2, (1L << 0), key_press, &data);

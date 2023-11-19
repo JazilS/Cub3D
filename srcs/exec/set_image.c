@@ -6,7 +6,7 @@
 /*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:58:56 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/07 21:21:18 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:09:32 by sagouasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ int	set_images(t_data *data)
 	t_imag	img;
 
 	if (!malloc_textures(data))
-		quit_error_no_free("Failed to set images");
+		quit_error("Failed to set images", data->garb_coll);
 	if (!set_main_img(data))
-		quit_error_no_free("Failed to create image");
+		quit_error("Failed to create image", data->garb_coll);
 	if (!load_image(data, data->engine->textures[0], data->so,
 			&img))
-		quit_error_no_free("Failed to set images");
+		quit_error("Failed to set images", data->garb_coll);
 	if (!load_image(data, data->engine->textures[1], data->no,
 			&img))
-		quit_error_no_free("Failed to set images");
+		quit_error("Failed to set images", data->garb_coll);
 	if (!load_image(data, data->engine->textures[2], data->we,
 			&img))
-		quit_error_no_free("Failed to set images");
+		quit_error("Failed to set images", data->garb_coll);
 	if (!load_image(data, data->engine->textures[3], data->ea,
 			&img))
-		quit_error_no_free("Failed to set images");
+		quit_error("Failed to set images", data->garb_coll);
 	return (1);
 }
 
@@ -54,7 +54,7 @@ int	load_image(t_data *data, int *texture, char *path, t_imag *img)
 	y = -1;
 	img->img = mlx_xpm_file_to_image(data->engine->mlx, path, &img->img_width,
 			&img->img_height);
-	if (!img->img)
+	if (!img->img || img->img_height != 64 || img->img_width != 64)
 		return (0);
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
 			&img->endian);
