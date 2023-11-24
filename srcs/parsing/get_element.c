@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_element.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 20:16:19 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/07 22:07:50 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:48:32 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,31 +49,45 @@ void	get_element3(int *flag, char **file, int *i, t_data *data)
 {
 	if (!ft_strncmp(file[*i], "NO", 2) && !data->no)
 	{
+		if (ft_strncmp(file[*i] + (ft_strlen(file[*i]) - 4), ".xpm", 4))
+			quit_error(TEXTURE_TYPE, data->garb_coll);
 		data->no = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
 	else if (!ft_strncmp(file[*i], "WE", 2) && !data->we)
 	{
+		if (ft_strncmp(file[*i] + (ft_strlen(file[*i]) - 4), ".xpm", 4))
+			quit_error(TEXTURE_TYPE, data->garb_coll);
 		data->we = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (get_element2(flag, file, i, data))
-		quit_error(INVALID_ELEMENT, data->garb_coll);
+	else
+		get_element2(flag, file, i, data);
 }
 
-int	get_element2(int *flag, char **file, int *i, t_data *data)
+void	get_element2(int *flag, char **file, int *i, t_data *data)
 {
 	if (!ft_strncmp(file[*i], "SO", 2) && !data->so)
 	{
+		if (ft_strncmp(file[*i] + (ft_strlen(file[*i]) - 4), ".xpm", 4))
+			quit_error(TEXTURE_TYPE, data->garb_coll);
 		data->so = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
 	else if (!ft_strncmp(file[*i], "EA", 2) && !data->ea)
 	{
+		if (ft_strncmp(file[*i] + (ft_strlen(file[*i]) - 4), ".xpm", 4))
+			quit_error(TEXTURE_TYPE, data->garb_coll);
 		data->ea = ft_substr(file[*i], 3, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;
 	}
-	else if (!ft_strncmp(file[*i], "F", 1) && !data->f)
+	else if (get_element4(flag, file, i, data))
+		quit_error(INVALID_ELEMENT, data->garb_coll);
+}
+
+int	get_element4(int *flag, char **file, int *i, t_data *data)
+{
+	if (!ft_strncmp(file[*i], "F", 1) && !data->f)
 	{
 		data->f = ft_substr(file[*i], 2, ft_strlen(file[*i]), data->garb_coll);
 		(*flag)++;

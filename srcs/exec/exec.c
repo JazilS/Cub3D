@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:30:35 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/19 19:04:55 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:56:28 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	init_engine(t_engine *engine)
 	engine->ray_dirx = 0;
 	engine->ray_diry = 0;
 	engine->wall_x = 0;
-	engine->move_speed = 0.099;
-	engine->rot_speed = 0.09;
+	engine->move_speed = 0.300;
+	engine->rot_speed = 0.150;
 	engine->side = 0;
 	engine->tex_x = 0;
 	engine->tex_width = 64;

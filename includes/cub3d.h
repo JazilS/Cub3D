@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:15:59 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/08 19:14:51 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:37:09 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define INVALID_CHAR "There is invalid charactere in the map."
 # define MUCH_NB_CHAR "There is too much start position"
 # define FEW_NB_CHAR "There is too few start position"
+# define TEXTURE_TYPE "Texture file type incorrect"
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_EXIT 17
 # define WIDTH 1080
@@ -172,8 +173,9 @@ int					fill_map(char **map, t_data *data);
 char				**get_map_path(char **map, int len, t_data *data);
 int					get_len(char **map);
 char				**get_map_game(char **map);
-int					get_element2(int *flag, char **file, int *i, t_data *data);
+void				get_element2(int *flag, char **file, int *i, t_data *data);
 void				get_element3(int *flag, char **file, int *i, t_data *data);
+int					get_element4(int *flag, char **file, int *i, t_data *data);
 
 // CHECK //
 void				check(char *file, int ac, t_data *data);
@@ -239,5 +241,6 @@ void				draw_utils2(t_data *data);
 void				*ft_malloc(unsigned int size, t_list **garb_coll);
 void				clear(t_data data);
 void				ft_destroy_mlx(t_data *data);
+void				ft_destroy(t_data *data);
 void				*ft_calloc(size_t nmemb, size_t size, t_data *data);
 #endif

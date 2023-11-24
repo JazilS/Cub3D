@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_image.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:58:56 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/19 19:09:32 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:19:19 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ int	load_image(t_data *data, int *texture, char *path, t_imag *img)
 	y = -1;
 	img->img = mlx_xpm_file_to_image(data->engine->mlx, path, &img->img_width,
 			&img->img_height);
-	if (!img->img || img->img_height != 64 || img->img_width != 64)
-		return (0);
-	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
-			&img->endian);
-	if (!img->data)
+	if (img->img)
+		img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l,
+				&img->endian);
+	if (!img->img || img->img_height != 64 || img->img_width != 64
+		|| !img->data)
 	{
 		mlx_destroy_image(data->engine->mlx, img->img);
-		return (0);
+		return (ft_destroy(data), 0);
 	}
 	while (++y < img->img_height)
 	{
