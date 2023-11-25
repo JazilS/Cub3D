@@ -6,13 +6,13 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:05:10 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/25 19:06:03 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:16:48 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int key_move(t_data *data)
+int	key_move(t_data *data)
 {
 	if (data->forward == 1)
 		up(&data);
@@ -26,7 +26,7 @@ int key_move(t_data *data)
 		key_press_move_camera_right(65363, &data);
 	if (data->move_cam_left == 1)
 		key_press_move_camera_left(65361, &data);
-	return (0);	
+	return (0);
 }
 
 int	key_press(int key, t_data **data)
@@ -98,8 +98,8 @@ int	key_press_move_camera_left(int key, t_data **data)
 	{
 		tmp = (*data)->engine->dir_x;
 		(*data)->engine->dir_x = (*data)->engine->dir_x
-			* cos((*data)->engine->rot_speed)
-			- (*data)->engine->dir_y * sin((*data)->engine->rot_speed);
+			* cos((*data)->engine->rot_speed) - (*data)->engine->dir_y
+			* sin((*data)->engine->rot_speed);
 		(*data)->engine->dir_y = tmp * sin((*data)->engine->rot_speed)
 			+ (*data)->engine->dir_y * cos((*data)->engine->rot_speed);
 		tmp = (*data)->engine->plane_x;
