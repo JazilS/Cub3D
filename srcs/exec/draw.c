@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:13:58 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/24 18:20:25 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:18:25 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	draw(t_data *data)
 	y = -1;
 	mlx_destroy_image(data->engine->mlx, data->engine->img.img);
 	data->engine->img.img = mlx_new_image(data->engine->mlx, WIDTH, HEIGHT);
-	while (++y < HEIGHT)
+	while (++y < HEIGHT - 1)
 	{
 		x = -1;
-		while (++x < WIDTH)
+		while (++x < WIDTH - 1)
 			data->engine->img.data[y * WIDTH + x] = data->engine->buf[y][x];
 	}
 	mlx_put_image_to_window(data->engine->mlx, data->engine->win,

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:36:05 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 07:12:12 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:32:30 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ int	get_and_check_map(t_data *data)
 	check_valid_char(data->map, data);
 	check_start(data->map, data);
 	check_empty_line(data->map, data);
-	check_borders(data->map, data);
-	check_borders_suite(data->map, data);
-	check_borders_suite2(data->map, data);
 	return (0);
 }
 

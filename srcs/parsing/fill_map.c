@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sagouasm <sagouasm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:49:52 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/04 05:48:48 by sagouasm         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:38:52 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char	**get_map_game(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'N')
+			if (map[i][j] == 'N' || map[i][j] == 'W' || map[i][j] == 'S'
+				|| map[i][j] == 'E')
 				map[i][j] = '0';
 			j++;
 		}
