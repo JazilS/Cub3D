@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:15:59 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/25 16:23:44 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:59:28 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,12 @@ typedef struct s_data
 	int				fd;
 	int				nb_column;
 	int				pos_map;
+	int				right;
+	int				left;
+	int				forward;
+	int				back;
+	int				move_cam_right;
+	int				move_cam_left;
 	t_list			**garb_coll;
 	t_cord			cord;
 	t_engine		*engine;
@@ -235,6 +241,8 @@ int					load_image(t_data *data, int *texture, char *path,
 int					malloc_texture2(t_data *data);
 int					malloc_textures(t_data *data);
 void				draw_utils2(t_data *data);
+int					key_release(int key, t_data **data);
+int					key_move(t_data *data);
 
 /*---------------------------------LEAK----------------------------------*/
 

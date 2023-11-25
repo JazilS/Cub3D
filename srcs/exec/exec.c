@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:30:35 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/24 18:56:28 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:09:46 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	exec(t_data *data)
 			"Cub3D");
 	if (!data->engine->win)
 		quit_error(MLX_ERROR, data->garb_coll);
+	mlx_hook(data->engine->win, 2, (1L << 0), key_press, &data);
 	mlx_loop_hook(data->engine->mlx, &main_loop, &data);
 	mlx_hook(data->engine->win, 17, 0, mlx_loop_end, data->engine->mlx);
-	mlx_hook(data->engine->win, 2, (1L << 0), key_press, &data);
+	mlx_hook(data->engine->win, 3, (1L << 1), key_release, &data);
 	mlx_loop(data->engine->mlx);
 	return (0);
 }
@@ -50,8 +51,8 @@ int	init_engine(t_engine *engine)
 	engine->ray_dirx = 0;
 	engine->ray_diry = 0;
 	engine->wall_x = 0;
-	engine->move_speed = 0.300;
-	engine->rot_speed = 0.150;
+	engine->move_speed = 0.025;
+	engine->rot_speed = 0.015;
 	engine->side = 0;
 	engine->tex_x = 0;
 	engine->tex_width = 64;
@@ -63,6 +64,7 @@ int	main_loop(t_data **data)
 {
 	calcul(data);
 	draw(*data);
+	key_move(*data);
 	return (0);
 }
 
