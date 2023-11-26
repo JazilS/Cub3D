@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:15:59 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/25 18:59:28 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:50:11 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@
 # define INVALID_ELEMENT "Invalid Element."
 # define MAP_OPEN "The current map is open."
 # define EMPTY_LINE "There is an empty line in the map."
-# define INVALID_CHAR "There is invalid charactere in the map."
+# define INVALID_CHAR "There is invalid character in the map."
 # define MUCH_NB_CHAR "There is too much start position"
-# define FEW_NB_CHAR "There is too few start position"
+# define FEW_NB_CHAR "Missing start position"
 # define TEXTURE_TYPE "Texture file type incorrect"
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_KEY_EXIT 17
@@ -172,7 +172,8 @@ int					get_element(char **file, t_data *data);
 int					get_and_check_element(t_data *data);
 int					get_and_check_map(t_data *data);
 int					get_map(t_data *data);
-int					flood_recursively_to_border(char **map, int x, int y);
+int					flood_recursively_to_border(char **map, int x, int y,
+						t_data *data);
 char				**create_copie(char **map, t_data *data);
 int					path_finding(char **map, t_data *data);
 int					fill_map(char **map, t_data *data);

@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 20:16:19 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/24 16:48:32 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:44:54 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	get_element2(int *flag, char **file, int *i, t_data *data)
 		(*flag)++;
 	}
 	else if (get_element4(flag, file, i, data))
-		quit_error(INVALID_ELEMENT, data->garb_coll);
+		quit_error("Double texture", data->garb_coll);
 }
 
 int	get_element4(int *flag, char **file, int *i, t_data *data)

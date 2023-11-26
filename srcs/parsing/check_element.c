@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:19:29 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/13 19:39:21 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:39:35 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_f(t_data *data)
 		free(temp[1]);
 		free(temp[2]);
 		free(temp);
-		quit_error(INVALID_ELEMENT, data->garb_coll);
+		quit_error("Invalid F element", data->garb_coll);
 	}
 	data->rgb_f = 65536 * tab[0] + 256 * tab[1] + tab[2];
 	free(temp[0]);
@@ -72,7 +72,7 @@ int	check_c(t_data *data)
 		free(temp[1]);
 		free(temp[2]);
 		free(temp);
-		quit_error(INVALID_ELEMENT, data->garb_coll);
+		quit_error("Invalid C element", data->garb_coll);
 	}
 	data->rgb_c = 65536 * tab[0] + 256 * tab[1] + tab[2];
 	free(temp[0]);
@@ -101,7 +101,7 @@ char	**check_alpha_rgb_f(t_data *data)
 				free(temp[1]);
 				free(temp[2]);
 				free(temp);
-				quit_error(INVALID_ELEMENT, data->garb_coll);
+				quit_error("Invalid F element", data->garb_coll);
 			}
 		}
 		i++;
@@ -128,7 +128,7 @@ char	**check_alpha_rgb_c(t_data *data)
 				free(temp[1]);
 				free(temp[2]);
 				free(temp);
-				quit_error(INVALID_ELEMENT, data->garb_coll);
+				quit_error("Invalid C element", data->garb_coll);
 			}
 		}
 		i++;

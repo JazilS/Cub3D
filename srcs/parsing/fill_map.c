@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:49:52 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/25 16:38:52 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:34:53 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,6 @@ char	*final_map(char *str, int len, t_data *data)
 	}
 	temp[i] = '\0';
 	i = 0;
-	while (temp[i] && i < len)
-	{
-		if (temp[i] == ' ')
-			temp[i] = '0';
-		i++;
-	}
 	return (temp);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jsabound <jsabound@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:17:53 by jsabound          #+#    #+#             */
-/*   Updated: 2023/11/19 16:48:12 by jsabound         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:45:12 by jsabound         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	get_file(t_data *data)
 		data->file[i++] = line;
 		data->file[i] = NULL;
 	}
-	if (i == 0)
+	if (i == 0 || i < 6)
 		quit_error("Map not valid", data->garb_coll);
 	return (close(data->fd), 0);
 }
